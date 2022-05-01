@@ -1,0 +1,33 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+.container
+{
+    margin-top:2em;
+    font-size:20px;
+}
+
+th, td {
+    border-bottom: 1px solid black;
+    word-wrap: break-word;
+  }
+  th, td {
+    padding-left:8em;
+    padding-right:8em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  table{
+    margin-top: 1em;
+  }
+form,table,h4,main,p{
+   
+    display: flex;
+    justify-content: center;
+
+  
+}
+
+
