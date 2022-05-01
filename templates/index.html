@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+  
+   
+<div class="container">  
+    <main role="main" class="container extra-bottom">
+        <h1 class="mt-5">TODO List Demo App</h1>
+       
+      </main>
+      <p><mark>Do it now.</mark></p>
+    <div class="content">    
+<form action="/" method="POST">
+    <input type="text" name="content" id="content" style="width:30em;height:2em;display: flex;justify-content:center;align-items: center;">
+    <input type="submit" value="Add Task" style="height:32px;margin-left:1em;background-color: rgb(32, 119, 219);font-size:15px;font-weight: bold;" >
+</form>
+{% if tasks|length < 1  %}
+    <h4>There are no tasks. Create one below!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Task</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for task in tasks %}
+        <tr>
+            <td>#</td>
+            <td>{{ task.content }}</td>
+            <td>
+                <a href="delete/{{task.id}}"><img src="{{ url_for('static', filename='images/delete.png') }}"style="width:1.5em;height:1.5em;margin-right:0.8em"></a>
+                <a href="update/{{task.id}}"><img src="{{ url_for('static', filename='images/edit.jpg') }}" style="width:1.5em;height:1.5em"></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</div> 
+    {% endif %}
+
+
+
+{% endblock %}
